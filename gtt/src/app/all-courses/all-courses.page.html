@@ -1,0 +1,65 @@
+<ion-content [fullscreen]="true">  
+  <ion-toolbar>
+   
+    <ion-buttons slot="start" >
+      <ion-icon size="large" color="primary"  name="book-outline"></ion-icon> <h4 color="primary">&nbsp; All Courses</h4> 
+     </ion-buttons>
+  </ion-toolbar>
+
+  <div class="banner">
+    <ion-row class="bgs">
+        <ion-col size="8" >
+           <p> Complete your registration to have access to the courses.</p>
+    
+           <ion-progress-bar color="primary" value="0.1"></ion-progress-bar>
+
+        </ion-col>
+    
+        <ion-col class="4">
+         <img src="assets/course.jfif">
+        </ion-col>
+      
+      </ion-row>
+
+      <ion-row>
+        <ion-col  size="6">&nbsp;</ion-col>
+      </ion-row>
+
+      
+  </div>
+
+
+  <div class="event_slider">
+
+    <ion-slides  [options]="{ slidesPerview: 'auto', zoom: false, grabCursor: true }" class="default-left-padding" >
+       <ion-row>
+     <ion-col size="6" *ngFor="let course of courses" >
+       <ion-card class="ion-text-left"  button="true" [routerLink]="['/tabs/tabs/course-page', course.course_id]">
+       
+          <ion-card-header class="ion-no-padding">
+           
+            <ion-img src=" https://globaltradetutor.com/admin/{{ course.img_preview}}"></ion-img>  
+           
+          </ion-card-header>
+          <ion-card-content>
+            <h4>{{  course.course_name }}</h4>
+            <ion-progress-bar color="warning" value="0.4"></ion-progress-bar>
+            40% Completed
+
+         
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+   
+
+    </ion-row>
+  
+  </ion-slides>
+
+
+  </div>
+
+ 
+
+
+</ion-content>

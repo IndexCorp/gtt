@@ -1,0 +1,62 @@
+   
+ion-content {
+    background-color: grey;
+  
+   
+   ion-toolbar {
+        padding-left: 14px;
+        padding-right: 14px;
+
+
+                
+        ion-title {
+            --color: white;
+            font-size: 18px;
+
+        }
+
+    }
+   
+}
+.banner{
+    position: relative;
+    height: 300px;
+    width: 100%;
+    background: url('/assets/course-1-img.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    img{
+        width: 100%;
+
+    }
+    .caption{
+        position: absolute;
+        width: 100%;
+        bottom: 40%;
+        font-size: 26px;
+        color: white;
+        padding-left: 26px;
+        padding-right: 26px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        
+    }
+    ion-button {
+        position: absolute;
+        bottom: 20%;
+  
+    }
+}
+
+
+
+
+
+
+
+
+ion-card{
+    width: 100%;
+}

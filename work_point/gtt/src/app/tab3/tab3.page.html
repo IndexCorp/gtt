@@ -1,0 +1,108 @@
+<ion-content [fullscreen]="true">
+  <ion-toolbar color="white">
+    <ion-title color="black">
+   <h2>My Dashboard</h2>
+    </ion-title>
+    <ion-buttons slot="start" color="primary">
+      <ion-menu-button color="black" menu="main-menu" id="main" ></ion-menu-button >
+    </ion-buttons>
+  </ion-toolbar>
+
+
+  <div class="banner">
+<ion-row>
+    <ion-col size="6">
+       <h3> What would you <br>like to learn?</h3>
+
+        <ion-button fill="solid" shape="round">GET STARTED</ion-button>
+    </ion-col>
+
+    <ion-col class="6">
+     <img src="assets/login.jpg">
+    </ion-col>
+  
+  </ion-row>
+  </div>
+
+  <div class="title">
+    <h2>My Courses</h2>
+
+    <p>See All</p>
+
+  </div>
+
+  <div class="event_slider">
+
+    <ion-slides  [options]="{ slidesPerview: 'auto', zoom: false, grabCursor: true }" class="default-left-padding" >
+       <ion-row>
+     <ion-col size="6" *ngFor="let course of courses" >
+       <ion-card class="ion-text-left"  button="true" [routerLink]="['/course-page', course.course_id]">
+       
+          <ion-card-header class="ion-no-padding">
+           
+            <ion-img src=" https://globaltradetutor.com/admin/{{ course.img_preview}}"></ion-img>  
+            <h4>{{  course.course_name }}</h4>
+          </ion-card-header>
+          <ion-card-content>
+               <p class="date">
+                   <ion-datetime value="{{  course.date_created }}" display-timezone="utc"></ion-datetime>
+            
+               </p>
+              <h2 class="eventname"></h2>
+              <!--  <p class="location"><ion-icon name="location"></ion-icon>Lagos, Nigeria</p>
+            -->
+            <div class="additional_info">
+              <div class="attendees">
+                <p>+7</p>
+
+              </div>
+
+              <p class="time">
+                <ion-datetime value="{{  course.date_created }}"  displayFormat="h:mm a">{{  course.date_created }}</ion-datetime>
+                </p>
+            </div>
+         
+         
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+   
+
+    </ion-row>
+  
+  </ion-slides>
+
+
+  </div>
+
+  <div class="title">
+    
+    <h2>Categories</h2>
+
+    <p>See All</p>
+  </div>
+  
+<ion-row>
+  <ion-col size="2">
+    <ion-badge  color="primary">All</ion-badge>
+
+  </ion-col> 
+  <ion-col  size="4">
+    <ion-badge color="tertiary">Customer Care</ion-badge>
+
+  </ion-col>
+   <ion-col  size="4">
+    <ion-badge color="tertiary">Trade Finance</ion-badge>
+
+  </ion-col>
+   <ion-col  size="3">
+    <ion-badge color="tertiary">Import Trade</ion-badge>
+
+  </ion-col> 
+  <ion-col  size="3">
+    <ion-badge color="tertiary">Export Trade</ion-badge>
+
+  </ion-col>
+</ion-row>
+   
+</ion-content>

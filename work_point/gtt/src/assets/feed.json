@@ -1,0 +1,32 @@
+[
+    {
+        "id": 0,
+        "title": "This is my Ashile",
+        "text": "A Single Card without content and blabla, Lorem ipsum dolor",
+        "src": "../assets/ashile.mp3"
+     
+
+    },
+    {
+        "id": 1,
+        "title": "This is my Content",
+        "text": "A Single Card without content and blabla, Lorem ipsum dolor",
+        "src": "https://firebasestorage.googleapis.com/v0/b/gtc-tutor-3bb65.appspot.com/o/Diploma%20EBM-Module-2%2FDiploma%20EBM-ETF-Module-2-Lecture-2.mp4?alt=media&token=f50783cb-4df0-4dcd-995d-19e02b3b0e0c"
+
+    },
+    {
+        "id": 2,
+        "title": "This is my Content",
+        "text": "A Single Card without content and blabla, Lorem ipsum dolor",
+        "src": "https://firebasestorage.googleapis.com/v0/b/gtc-tutor-3bb65.appspot.com/o/Diploma%20EBM-Module-2%2FDiploma%20EBM-ETF-Module-2-Lecture-1.mp4?alt=media&token=a34aeb32-1ee0-4bd5-a326-a136ce094138"
+
+
+    },
+    {
+        "id": 3,
+        "title": "This is my Content",
+        "text": "A Single Card without content and blabla, Lorem ipsum dolor",
+        "src": "https://firebasestorage.googleapis.com/v0/b/gtc-tutor-3bb65.appspot.com/o/Basic%20Program%2FTPDP%20Basic%20Lecture-1.mp4?alt=media&token=cdbbeb75-3cb9-4f61-b90f-406daf514d1f"
+
+    }
+]

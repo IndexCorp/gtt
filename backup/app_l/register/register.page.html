@@ -1,0 +1,40 @@
+
+<ion-content class="background">
+ <div class="login_logo">
+
+   <center>
+     <img src="assets/logo.png">
+
+   
+   </center>
+ </div>
+  <div class="content">
+    <center>  <h2>Create Account</h2></center>
+    <ion-row>
+      <ion-col offset-xs="2" size-xs="8"  size-sm="6" offset-sm="3" size-md="6" offset-md="3">
+  
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <ion-input type="text" ngModel name="user_name" #fnameCtrl="ngModel" required placeholder="Fullname" style="padding-left: 10px !important; font-family:'Courier New', Courier, monospace"></ion-input>
+        <p *ngIf="!fnameCtrl.valid && fnameCtrl.touched" style="color: red;">Please provide your Fullname </p>
+         <br>
+        <ion-input type="number" ngModel name="phone_no" #telCtrl="ngModel" required tel minlength="11"  placeholder="Phone Number" style="padding-left: 10px !important; font-family:'Courier New', Courier, monospace"></ion-input>
+        <p *ngIf="!telCtrl.valid && telCtrl.touched" style="color: red;">Please provide a valid Phone Number</p>
+       <br>
+        <ion-input type="email" ngModel name="email" #emailCtrl="ngModel" required email placeholder="Email" style="padding-left: 10px !important; font-family:'Courier New', Courier, monospace"></ion-input>
+        <p *ngIf="!emailCtrl.valid && emailCtrl.touched" style="color: red;">Please provide a valid email address</p>
+          <br>
+        <ion-input type="password" ngModel name="license_key" required placeholder="Password" style="padding-left: 10px !important; font-family:'Courier New', Courier, monospace"></ion-input>
+    <br>
+    <ion-input type="password" ngModel name="license_key" required placeholder="Confirm Password" style="padding-left: 10px !important; font-family:'Courier New', Courier, monospace"></ion-input>
+    <br>
+      <ion-button type="submit" class="actionbutton" fill="solid"
+       expand="full" style="text-transform: none;" color="primary"
+        ><b>Sign in</b></ion-button>
+        </form>
+
+  </ion-col>
+</ion-row>
+  </div>
+   
+
+</ion-content>

@@ -1,0 +1,61 @@
+.login_logo{
+    margin-top: 5rem;
+  }
+  //ion-content {
+  //--ion-background-color: #0d1ca3;
+  //}
+  
+  .content{
+      background: white;
+      padding-top: 2rem;
+      padding-bottom: 30rem;
+      margin-top:40px;
+      border-top: 1px solid blue;
+      border-radius: 5rem;
+     
+  }
+  .buttons-action{
+      margin-left:5px;
+  }
+  
+  .signup-text{
+      font-size: x-small;
+      text-align: center;
+      font-family: 'Nunito', sans-serif;
+      text-transform: none;
+  
+  }
+  
+  /*
+  ion-input{
+      background-color: #f7f7f7;
+      margin: 1rem;
+      //border-radius: 5px;
+      font-size: large;
+      width: 100%;
+      border-bottom: 1px solid grey;
+  }
+  
+  .actionbutton{
+      border-radius: 5px;
+      color: white;
+      margin-left: 45px;
+      margin-right: 13px;
+      font-size: small;
+      font-family: sans-serif;
+  }
+  
+  .alert-wrapper {
+      background: #e5e5e5;
+    }
+    
+    /* Works - pass "my-custom-class" in cssClass to increase specificity 
+    .my-custom-class .alert-wrapper {
+      background: #e5e5e5;
+    }
+  
+    .my-custom-class {
+      --background: #e5e5e5;
+    }
+    */
+    

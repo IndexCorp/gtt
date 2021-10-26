@@ -1,0 +1,121 @@
+<!--
+<ion-content [scrollEvents]="true" (ionScroll)="didScroll($event)">
+  
+  <ion-toolbar color="white">
+    <ion-title>
+    My Videos
+    </ion-title>
+    <ion-buttons slot="start" color="primary">
+      <ion-menu-button color="back" menu="main-menu" id="main" ></ion-menu-button >
+    </ion-buttons>
+  </ion-toolbar>
+
+  -->
+
+  
+
+  <ion-content [scrollEvents]="true" (ionScroll)="didScroll($event)"   *ngFor="let course of courses" >
+    <ion-toolbar>
+      <ion-buttons slot="start" color="white">
+        <ion-menu-button  color="white" color="back" menu="main-menu" id="main" ></ion-menu-button >
+      </ion-buttons>
+    <ion-title color="dark">
+    My Videos
+    </ion-title>
+   
+  </ion-toolbar>
+
+
+  
+  <div class="banner">
+   <!--<img class="banner" src="/assets/course-1-img.jpg">--> 
+    <div class="ion-no-padding ">
+      <span class="caption"  style="background-color: red; color: white" >{{ course.course_name }}</span>  
+    </div>
+
+    <ion-button  fill="outline" shape="round" color="primary"><ion-icon name="ios-clock"> </ion-icon> {{ course.level }}</ion-button>
+
+  
+
+  
+  
+  </div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-card class="ion-padding" style="box-shadow: none;">
+        <h2>
+          Description
+        </h2>
+        <p>{{ course.descs }}</p>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      
+    </ion-row>
+  </ion-grid>
+
+  <div class="ion-padding">
+    <ion-card *ngFor="let item of feed">
+      <ion-card-header  class="ion-no-padding">
+          <div *ngIf="item.link">
+          <video #player playsinline preload="auto">
+            <source [src]="item.link" type="video/mp4">
+          </video>
+          <div class="bar">
+            <ion-button (click)="openFullscreen(player)" color="danger" fill="clear">
+              <ion-icon slot="icon-only" name="easel"></ion-icon>
+
+            </ion-button>
+            <ion-button (click)="playOnSide(player)" color="danger" fill="clear">
+              <ion-icon slot="icon-only" name="open"></ion-icon>
+
+            </ion-button>
+          </div>
+
+        </div>
+      </ion-card-header>
+
+      <ion-card-content>
+        
+        <h2>{{ item.title }}</h2>
+        
+        <p>{{ item.descs }}</p>
+
+      
+      
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+
+  <div class="sticky-video" #stickyplayer [hidden]="!stickyVideo">
+    <div class="sticky-controls" *ngIf="stickyVideo">
+      <ion-row class="ion-no-padding">
+        <ion-col size="4">
+          <ion-button size="small" (click)="closeSticky()" color="light" fill="clear">
+            <ion-icon slot="icon-only" name="close-circle-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+         <ion-col size="4">
+          <ion-button size="small" (click)="playOrPauseSticky()" color="light" fill="clear">
+            <ion-icon slot="icon-only" [name]="stickyPlaying ? 'pause' : 'play'"></ion-icon>
+          </ion-button>
+        </ion-col>
+         <ion-col size="4">
+          <ion-button size="small" (click)="openFullscreen(stickyVideo)" color="light" fill="clear">
+            <ion-icon slot="icon-only" name="easel"></ion-icon>
+          </ion-button>
+        </ion-col>
+        
+
+      </ion-row>
+
+    </div>
+
+  </div>
+
+</ion-content>

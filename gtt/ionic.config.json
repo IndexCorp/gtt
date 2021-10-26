@@ -1,0 +1,7 @@
+{
+  "name": "gtt",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,105 @@
+
+
+
+<ion-content [fullscreen]="true">
+  <ion-toolbar color="white">
+    <ion-title>
+    All Courses
+    </ion-title>
+    <ion-buttons slot="start" color="primary">
+      <ion-menu-button color="back" menu="main-menu" id="main" ></ion-menu-button >
+    </ion-buttons>
+  </ion-toolbar>
+
+
+  
+  <div class="banner">
+    <img class="banner" src="/assets/course-1-img.jpg">
+    <div class="caption ion-padding ">
+      <span style="color: #0000">Join with<br>upcoming events</span>
+    </div>
+  
+    <div class="search">
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-icon slot="start" name="search-outline"> </ion-icon>
+        <ion-input placeholder="Search Courses"></ion-input>
+        <ion-button slot="end">
+          <img src="/assets/filter.svg" />
+        </ion-button>
+      </ion-item>
+  
+    </div>
+    </div>
+  
+    <div class="title">
+      <h2>Popular Courses</h2>
+  
+      <p>See All</p>
+  
+    </div>
+  
+    <div class="event_slider">
+  
+        
+
+   <ion-slides [options]="{ slidePerView: 'auto', zoom: false, grabCursor: true}" class="default-left-padding">
+      <ion-slide>    
+        <ion-col class="ion-text-left">
+          <ion-card>
+            <ion-card-header class="ion-no-padding">
+              <img src="/assets/course-1-img.jpg">
+  
+            </ion-card-header>
+            <ion-card-content>
+              <p class="date">16th June, 2021</p>
+              <h2 class="eventname">Diploma in Trade Logistics</h2>
+              <p class="location"><ion-icon name="location"></ion-icon>Lagos, Nigeria</p>
+              
+              <div class="additional_info">
+                <div class="attendees">
+                  
+              <ion-progress-bar color="primary" value="1">Hello</ion-progress-bar>  
+                </div>
+  
+                <p class="time">10:00pm</p>
+              </div>
+            
+            
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+         </ion-slide>
+  <ion-slide>
+    <ion-col class="ion-text-left">
+      <ion-card>
+        <ion-card-header class="ion-no-padding">
+          <img src="/assets/course-3-img.jpg"/>
+
+        </ion-card-header>
+        <ion-card-content>
+          <p class="date">16th June, 2021</p>
+          <h2 class="eventname">Diploma in Trade Logistics</h2>
+          <p class="location"><ion-icon name="location"></ion-icon>Lagos, Nigeria</p>
+          
+          <div class="additional_info">
+            <div class="attendees">
+              
+          <ion-progress-bar color="primary" value="1">Hello</ion-progress-bar>  
+            </div>
+
+            <p class="time">10:00pm</p>
+          </div>
+        
+        
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+
+
+    </ion-slide>
+  </ion-slides>
+
+</div>
+</ion-content>

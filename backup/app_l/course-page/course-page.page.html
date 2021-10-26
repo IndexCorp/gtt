@@ -1,0 +1,67 @@
+
+
+
+<ion-content [fullscreen]="true">
+  <ion-toolbar color="white">
+    <ion-title>
+    All Courses
+    </ion-title>
+    <ion-buttons slot="start" color="primary">
+      <ion-menu-button color="back" menu="main-menu" id="main" ></ion-menu-button >
+    </ion-buttons>
+  </ion-toolbar>
+
+
+  
+  <div class="banner">
+   <!--<img class="banner" src="/assets/course-1-img.jpg">--> 
+    <div class="ion-no-padding ">
+      <span class="caption"  style="background-color: red; color: white" >Certified Basic Trade Professional (CBTP)</span>  
+    </div>
+
+    <ion-button  fill="solid" shape="round" color="primary"><ion-icon name="ios-clock"> </ion-icon> Beginner</ion-button>
+
+  
+
+  
+  
+  </div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-card class="ion-padding" style="box-shadow: none;">
+        <h2>
+          Description
+        </h2>
+        <p>Hello Welcome to Certified Basic Trade Professional (CBTP)</p>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      
+    </ion-row>
+  </ion-grid>
+
+  <ion-segment [(ngModel)] = "segment">
+    <ion-segment-button value="videos">
+      <ion-label>Videos</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="audios">
+      <ion-label>Audios</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+
+
+  <div *ngIf="segment != 'audios'">
+    <app-videos></app-videos>
+  </div>
+  
+  <div *ngIf="segment == 'audios'">
+    <app-audios></app-audios>
+  </div>
+  
+</ion-content>

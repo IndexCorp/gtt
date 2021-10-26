@@ -1,0 +1,64 @@
+
+
+
+<ion-content [fullscreen]="true">
+  <ion-toolbar color="white">
+    <ion-title>
+    All Courses
+    </ion-title>
+    <ion-buttons slot="start" color="primary">
+      <ion-menu-button color="back" menu="main-menu" id="main" ></ion-menu-button >
+    </ion-buttons>
+  </ion-toolbar>
+
+
+  
+  <div class="banner">
+   <!--<img class="banner" src="/assets/course-1-img.jpg">--> 
+    <div class="ion-no-padding ">
+      <span class="caption"  style="background-color: red; color: white" >Certified Basic Trade Professional (CBTP)</span>  
+    </div>
+
+    <ion-button  fill="solid" shape="round" color="primary"><ion-icon name="ios-clock"> </ion-icon> Beginner</ion-button>
+
+  
+
+  
+  
+  </div>
+
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Select Course</ion-label>
+          <ion-select value="brown" okText="Okay" cancelText="Dismiss">
+            <ion-select-option value="brown">Brown</ion-select-option>
+            <ion-select-option value="blonde">Blonde</ion-select-option>
+            <ion-select-option value="black">Black</ion-select-option>
+            <ion-select-option value="red">Red</ion-select-option>
+          </ion-select>
+        </ion-item>
+        </ion-col>
+      <ion-col>
+
+      
+     
+<ion-item>
+  <ion-label>Select Date</ion-label>
+  <ion-datetime displayFormat="D MMM YYYY H:mm" min="2021" max="2050" ></ion-datetime>
+</ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button>Schedule Exam</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+ 
+
+</ion-content>

@@ -1,0 +1,289 @@
+
+
+<ion-content [fullscreen]="true">
+  
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-icon size="large" color="danger"  name="power" (click)= "presentAlertConfirm()"></ion-icon>
+     <!-- <ion-back-button defaultHref="/courses"></ion-back-button><h4 color="red">Course Menu</h4> -->
+    </ion-buttons> 
+    <ion-buttons slot="start" >
+      <ion-icon size="large" color="primary"  name="home-outline"></ion-icon> <h4 color="primary">&nbsp; My Dashboard</h4> 
+     </ion-buttons>
+
+   
+  </ion-toolbar>
+
+
+
+
+
+
+
+
+
+  <div class="banner">
+    <ion-row class="bgs">
+        <ion-col size="8" >
+           <p> Complete your registration to have access to the courses.</p>
+    
+           <ion-progress-bar color="primary" value="0.1"></ion-progress-bar>
+          <p>10% Completed</p>
+        </ion-col>
+    
+        <ion-col class="4">
+         <img src="assets/course.jfif">
+        </ion-col>
+      
+      </ion-row>
+
+      <ion-row>
+        <ion-col  size="6">&nbsp;</ion-col>
+      </ion-row>
+
+      
+<ion-row class="bgse">
+    <ion-col size="6">
+       <p> What would you <br>like to learn?</p>
+
+        <ion-button fill="solid" shape="round">GET STARTED</ion-button>
+    </ion-col>
+
+    <ion-col class="6">
+     <img src="assets/ict.jpg">
+    </ion-col>
+  
+  </ion-row>
+  </div>
+
+  <div class="title">
+    <h2>My Courses</h2>
+
+    <p><a href="tabs/tabs/all-courses" style="text-decoration: none;" >View All <ion-icon name="arrow-forward"></ion-icon></a></p>
+
+  </div>
+
+  <div class="event_slider">
+
+    <ion-slides  [options]="{ slidesPerview: 'auto', zoom: false, grabCursor: true }" class="default-left-padding" >
+       <ion-row>
+     <ion-col size="6" *ngFor="let course of courses" >
+       <ion-card class="ion-text-left"  button="true" [routerLink]="['/tabs/tabs/course-page', course.course_id]">
+       
+          <ion-card-header class="ion-no-padding">
+           
+            <ion-img src=" https://globaltradetutor.com/admin/{{ course.img_preview}}"></ion-img>  
+           
+          </ion-card-header>
+          <ion-card-content>
+            <h4>{{  course.course_name }}</h4>
+            <ion-progress-bar color="warning" value="0.4"></ion-progress-bar>
+            40% Completed
+
+         
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+   
+
+    </ion-row>
+  
+  </ion-slides>
+
+
+  </div>
+
+  
+  <div class="title">
+    <h2>My Results</h2>
+
+    <p><a href="tabs/tabs/result" style="text-decoration: none;">View All <ion-icon name="arrow-forward"></ion-icon></a> </p>
+
+  </div>
+
+  <div class="event_slider">
+
+    <ion-slides  [options]="{ slidesPerview: 'auto', zoom: false, grabCursor: true }" class="default-left-padding" >
+       <ion-row>
+     <ion-col size="6"  *ngFor="let result of results"  >
+       <ion-card class="ion-text-left"  button="true">
+       
+          <ion-card-header class="ion-no-padding" style="width: 300px;">
+           
+            <!--<ion-img src=" https://globaltradetutor.com/admin/"></ion-img> --> 
+
+           <div *ngIf="result.grade == 'Distinction' "  style="width: 70px; height: 70px; border: 1px solid white;   border-end-start-radius: 10%;  border-start-end-radius: 20%;  border-end-end-radius: 50%; background-image: url('../../assets/excel.jpg'); background-size: cover; display: inline-block;">
+            </div>
+            <div *ngIf="result.grade == 'Credit' "  style="width: 70px; height: 70px; border: 1px solid white;   border-end-start-radius: 10%;  border-start-end-radius: 20%;  border-end-end-radius: 50%; background-image: url('../../assets/credit.jpg'); background-size: cover; display: inline-block;">
+                  
+
+           </div>
+            <div *ngIf="result.grade == 'Pass' "  style="width: 70px; height: 70px; border: 1px solid white;   border-end-start-radius: 10%;  border-start-end-radius: 20%;  border-end-end-radius: 50%; background-image: url('../../assets/thumb.png'); background-size: cover; display: inline-block;">
+                  
+
+           </div>
+           <div *ngIf="result.grade == 'Fail' "  style="width: 70px; height: 70px; border: 1px solid white;   border-end-start-radius: 10%;  border-start-end-radius: 20%;  border-end-end-radius: 50%; background-image: url('../../assets/cancel.png'); background-size: cover; display: inline-block;">
+                 
+
+          </div>
+          <div *ngIf="result.grade == 'Nil' "  style="width: 70px; height: 70px; border: 1px solid white;   border-end-start-radius: 10%;  border-start-end-radius: 20%;  border-end-end-radius: 50%; background-image: url('../../assets/nil.png'); background-size: cover; display: inline-block;">
+                
+
+         </div>
+          <div style="display: inline-block; font-size: xx-large; margin-left: 10px;">
+            <span>{{ result.score }}</span><br>
+            <ion-badge color="success">{{ result.grade }}</ion-badge>
+
+          
+          </div> 
+          </ion-card-header>
+          <ion-card-content>
+            <h2>{{ result.course_name }}</h2>
+            <ion-badge color="secondary">Final Exam</ion-badge>
+
+           
+         
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+
+      <ion-col size="6"  *ngFor="let dip_result of dip_results"  >
+        <ion-card class="ion-text-left"  button="true" [routerLink]="['/tabs/tabs/course-page', 2]">
+        
+           <ion-card-header class="ion-no-padding" style="width: 300px;">
+            
+             <!--<ion-img src=" https://globaltradetutor.com/admin/"></ion-img> --> 
+ 
+            <div *ngIf="dip_result.grade == 'Distinction' "  style="width: 70px; height: 70px; border: 1px solid white;   border-end-start-radius: 10%;  border-start-end-radius: 20%;  border-end-end-radius: 50%; background-image: url('../../assets/excel.jpg'); background-size: cover; display: inline-block;">
+             </div>
+             <div *ngIf="dip_result.grade == 'Credit' "  style="width: 70px; height: 70px; border: 1px solid white;   border-end-start-radius: 10%;  border-start-end-radius: 20%;  border-end-end-radius: 50%; background-image: url('../../assets/credit.jpg'); background-size: cover; display: inline-block;">
+                   
+ 
+            </div>
+             <div *ngIf="dip_result.grade == 'Pass' "  style="width: 70px; height: 70px; border: 1px solid white;   border-end-start-radius: 10%;  border-start-end-radius: 20%;  border-end-end-radius: 50%; background-image: url('../../assets/thumb.png'); background-size: cover; display: inline-block;">
+                   
+ 
+            </div>
+            <div *ngIf="dip_result.grade == 'Fail' "  style="width: 70px; height: 70px; border: 1px solid white;   border-end-start-radius: 10%;  border-start-end-radius: 20%;  border-end-end-radius: 50%; background-image: url('../../assets/cancel.png'); background-size: cover; display: inline-block;">
+                  
+ 
+           </div>
+           <div *ngIf="dip_result.grade == 'Nil' "  style="width: 70px; height: 70px; border: 1px solid white;   border-end-start-radius: 10%;  border-start-end-radius: 20%;  border-end-end-radius: 50%; background-image: url('../../assets/nil.png'); background-size: cover; display: inline-block;">
+                 
+ 
+          </div>
+           <div style="display: inline-block; font-size: xx-large; margin-left: 10px;">
+             <span>{{ dip_result.final }}</span><br>
+             <ion-badge color="success">{{ dip_result.grade }}</ion-badge>
+ 
+           
+           </div> 
+           </ion-card-header>
+           <ion-card-content>
+             <h2>{{ dip_result.course_name }}</h2>
+             <ion-badge color="secondary">Diploma Exam</ion-badge>
+ 
+            
+          
+           </ion-card-content>
+         </ion-card>
+       </ion-col>
+   
+<!--
+       <ion-col size="6" >
+        <ion-card class="ion-text-left"  button="true" [routerLink]="['/tabs/tabs/course-page', 2]">
+        
+           <ion-card-header class="ion-no-padding" style="width: 300px;">
+            
+            
+            <div style="width: 70px; height: 70px; border: 1px solid white;   border-end-start-radius: 10%;  border-start-end-radius: 20%;  border-end-end-radius: 50%; background-image: url('../../assets/thumb.png'); background-size: cover; display: inline-block;">
+                   
+ 
+            </div>
+           <div style="display: inline-block; font-size: xx-large; margin-left: 10px;">
+             <span>85%</span><br>
+             <ion-badge color="success">Excelent</ion-badge>
+ 
+           
+           </div> 
+           </ion-card-header>
+           <ion-card-content>
+             <h2>Course Name</h2>
+             <ion-badge color="secondary">Examination</ion-badge>
+ 
+            
+          
+           </ion-card-content>
+         </ion-card>
+       </ion-col>
+
+
+
+       <ion-col size="6" >
+        <ion-card class="ion-text-left"  button="true" [routerLink]="['/tabs/tabs/course-page', 2]">
+        
+           <ion-card-header class="ion-no-padding" style="width: 300px;">
+            
+             
+            <div style="width: 70px; height: 70px; border: 1px solid white;   border-end-start-radius: 10%;  border-start-end-radius: 20%;  border-end-end-radius: 50%; background-image: url('../../assets/cancel.png'); background-size: cover; display: inline-block;">
+                   
+ 
+            </div>
+           <div style="margin-left: 50px; display: inline-block; font-size: xx-large; margin-left: 10px;">
+             <span>85%</span><br>
+             <ion-badge color="success">Excelent</ion-badge>
+ 
+           
+           </div> 
+           </ion-card-header>
+           <ion-card-content>
+             <h2>Course Name</h2>
+             <ion-badge color="secondary">Examination</ion-badge>
+ 
+            
+          
+           </ion-card-content>
+         </ion-card>
+       </ion-col>
+      -->
+      </ion-row>
+  
+  </ion-slides>
+
+
+  </div>
+
+  <div class="title">
+    
+    <h2>Categories</h2>
+
+    <p>See All</p>
+  </div>
+  
+<ion-row>
+  <ion-col size="2">
+    <ion-badge style="color: white; padding: 6px;"  color="primary">All</ion-badge>
+
+  </ion-col> 
+  <ion-col  size="4">
+    <ion-badge class="ion-badge" color="tertiary">Customer Care</ion-badge>
+
+  </ion-col>
+   <ion-col  size="4">
+    <ion-badge class="ion-badge" color="tertiary">Trade Finance</ion-badge>
+
+  </ion-col>
+   <ion-col  size="3">
+    <ion-badge class="ion-badge" color="tertiary">Import Trade</ion-badge>
+
+  </ion-col> 
+  <ion-col  size="3">
+    <ion-badge class="ion-badge" color="tertiary">Export Trade</ion-badge>
+
+  </ion-col>
+</ion-row>
+   
+
+
+</ion-content>

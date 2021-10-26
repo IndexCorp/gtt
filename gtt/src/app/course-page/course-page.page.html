@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs"></ion-back-button><h4 color="red">Course Menu</h4> 
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  
+  <div class="banner"*ngFor="let course of courses">
+   <!--<img class="banner" src="/assets/course-1-img.jpg">--> 
+    <div class="ion-no-padding "  >
+      <span class="caption"  style="background-color: red; color: white" >{{ course.course_name }}</span>  
+    </div>
+
+    <ion-button  fill="solid" shape="round" color="primary"><ion-icon name="ios-clock"> </ion-icon> {{ course.level }}</ion-button>
+
+  
+
+  
+  
+  </div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-card  class="ion-padding" style="box-shadow: none;"  *ngFor="let course of courses">
+        <h2>
+          Description
+        </h2>
+        <p>{{ course.descs }}</p>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      
+    </ion-row>
+  </ion-grid>
+
+  <ion-segment *ngFor="let course of courses">
+    <ion-segment-button [routerLink]="['/tabs/tabs/videos', course.id]">
+      <ion-label>Videos</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button [routerLink]="['/tabs/tabs/audios', course.id]">
+      <ion-label>Audios</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+
+<!--
+  <div *ngIf="segment != 'audios'">
+    <app-videos></app-videos>
+  </div>
+  
+  <div *ngIf="segment == 'audios'">
+    <app-audios></app-audios>
+  </div>
+  -->
+</ion-content>
